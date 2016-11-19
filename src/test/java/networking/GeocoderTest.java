@@ -7,10 +7,12 @@ import java.util.Arrays;
 import static org.hamcrest.CoreMatchers.both;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 import static spock.util.matcher.HamcrestMatchers.closeTo;
 
 public class GeocoderTest {
+
     private Geocoder geocoder = new Geocoder();
 
     @Test

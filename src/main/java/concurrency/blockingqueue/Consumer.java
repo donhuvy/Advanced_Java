@@ -2,7 +2,13 @@ package concurrency.blockingqueue;
 
 import java.util.concurrent.BlockingQueue;
 
+/**
+ * Consumer.
+ *
+ * @author Ken Kousen
+ */
 public class Consumer implements Runnable {
+
     private int id;
     private BlockingQueue<Message> queue;
 
@@ -23,4 +29,5 @@ public class Consumer implements Runnable {
             e.printStackTrace();
         }
     }
+
 }

@@ -13,6 +13,7 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 
 public class ListTestsWithExceptions {
+
     private List<String> strings = Arrays.asList("this", "is", "a", "list", "of", "strings");
 
     @Rule
@@ -23,7 +24,10 @@ public class ListTestsWithExceptions {
         assertThat(strings.size(), is(6));
     }
 
-    @Test // old JUnit 3.8
+    /**
+     * old JUnit 3.8
+     */
+    @Test
     public void nullListThrowsNPEOldStyle() {
         strings = null;
         try {
@@ -47,4 +51,5 @@ public class ListTestsWithExceptions {
         thrown.expectMessage("7");
         System.out.println(stringArray[7]);
     }
+
 }

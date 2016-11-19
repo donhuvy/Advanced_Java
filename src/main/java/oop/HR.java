@@ -4,7 +4,13 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Human resources.
+ *
+ * @author Ken Kousen
+ */
 public class HR {
+
     private List<Employee> employees = new ArrayList<>();
 
     public void hire(Employee e) {
@@ -29,4 +35,5 @@ public class HR {
                     NumberFormat.getCurrencyInstance().format(e.getPay()));
         }
     }
+
 }

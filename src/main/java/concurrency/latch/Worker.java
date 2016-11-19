@@ -2,7 +2,13 @@ package concurrency.latch;
 
 import java.util.concurrent.CountDownLatch;
 
+/**
+ * Worker.
+ *
+ * @author Ken Kousen
+ */
 public class Worker implements Runnable {
+
     private int id;
     private CountDownLatch startSignal;
     private CountDownLatch endSignal;
@@ -24,4 +30,5 @@ public class Worker implements Runnable {
             e.printStackTrace();
         }
     }
+
 }

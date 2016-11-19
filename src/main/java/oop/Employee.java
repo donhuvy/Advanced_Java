@@ -2,7 +2,13 @@ package oop;
 
 import java.time.LocalDate;
 
+/**
+ * Employee.
+ *
+ * @author Ken Kousen
+ */
 public abstract class Employee {
+
     public static final String DEFAULT_NAME = "UNKNOWN";
     private static int nextId;
 
@@ -63,4 +69,5 @@ public abstract class Employee {
         result = 31 * result + (hireDate != null ? hireDate.hashCode() : 0);
         return result;
     }
+
 }

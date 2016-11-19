@@ -5,7 +5,13 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.util.List;
 
+/**
+ * Person Data access object use JPA.
+ *
+ * @author Ken Kousen
+ */
 public class JpaPersonDAO implements PersonDAO {
+
     private EntityManagerFactory emf =
             Persistence.createEntityManagerFactory("hr");
 
@@ -14,7 +20,7 @@ public class JpaPersonDAO implements PersonDAO {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
         List<Person> people = em.createQuery(
-                "select p from Person p", Person.class).getResultList();
+                "SELECT p FROM Person p", Person.class).getResultList();
         em.getTransaction().commit();
         em.close();
         return people;
@@ -53,8 +59,9 @@ public class JpaPersonDAO implements PersonDAO {
     public List<Integer> getIds() {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        List<Integer> ids = em.createQuery("select p.id from Person p", Integer.class)
+        List<Integer> ids = em.createQuery("SELECT p.id FROM Person p", Integer.class)
                 .getResultList();
         return ids;
     }
+
 }

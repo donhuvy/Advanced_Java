@@ -1,11 +1,10 @@
 package generics.wildcards;
 
-import java.text.NumberFormat;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
 public class HR {
+
     public static void printEmpNames(List<Employee> employees) {
         employees.stream()
                 .map(Employee::getName)
@@ -28,4 +27,5 @@ public class HR {
             }
         }
     }
+
 }

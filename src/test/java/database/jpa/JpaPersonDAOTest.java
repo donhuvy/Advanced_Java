@@ -4,9 +4,12 @@ import org.junit.Test;
 
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 public class JpaPersonDAOTest {
+
     private PersonDAO dao = new JpaPersonDAO();
 
     @Test
@@ -42,9 +45,9 @@ public class JpaPersonDAOTest {
         assertNull(dao.findById(maxId));
     }
 
-
     @Test
     public void getIds() {
         System.out.println(dao.getIds());
     }
+
 }

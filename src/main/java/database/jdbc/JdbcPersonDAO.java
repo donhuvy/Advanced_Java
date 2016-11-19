@@ -1,10 +1,21 @@
 package database.jdbc;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Person data access object use JDBC.
+ *
+ * @author Ken Kousen
+ */
 public class JdbcPersonDAO implements PersonDAO {
+
     private static final String DRIVER = "com.mysql.jdbc.Driver";
     private static final String URL = "jdbc:mysql://localhost:3306/hr";
     private static final String USER = "jpa";
@@ -34,7 +45,6 @@ public class JdbcPersonDAO implements PersonDAO {
             e.printStackTrace();
         }
         return people;
-
     }
 
     @Override
@@ -69,7 +79,6 @@ public class JdbcPersonDAO implements PersonDAO {
             pst.setString(1, p.getName());
             int uc = pst.executeUpdate();
             if (uc != 1) throw new SQLException("No rows added");
-
             try (ResultSet keys = pst.getGeneratedKeys()) {
                 if (keys.next()) {
                     generatedKey = keys.getInt(1);
@@ -100,7 +109,7 @@ public class JdbcPersonDAO implements PersonDAO {
     public List<Integer> getIds() {
         List<Integer> ids = new ArrayList<>();
         try (
-                Connection conn = DriverManager.getConnection(URL,USER, PASSWORD);
+                Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
                 PreparedStatement pst = conn.prepareStatement("select id from hr.PEOPLE");
         ) {
             ResultSet rs = pst.executeQuery();
@@ -111,7 +120,7 @@ public class JdbcPersonDAO implements PersonDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return ids;
     }
+
 }

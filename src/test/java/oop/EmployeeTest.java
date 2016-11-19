@@ -2,15 +2,16 @@ package oop;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class EmployeeTest {
+
     private Employee fred = new Salaried();
 
     @Test
     public void getAndSetName() {
         assertEquals(Employee.DEFAULT_NAME, fred.getName());
-
         fred.setName("Name");
         assertEquals("Name", fred.getName());
     }
@@ -23,4 +24,5 @@ public class EmployeeTest {
         assertTrue(fred.equals(fred1));
         assertEquals(fred.hashCode(), fred1.hashCode());
     }
+
 }

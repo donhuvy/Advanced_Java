@@ -2,7 +2,13 @@ package concurrency.blockingqueue;
 
 import java.util.concurrent.BlockingQueue;
 
+/**
+ * Producer.
+ *
+ * @author Ken Kousen
+ */
 public class Producer implements Runnable {
+
     private int id;
     private BlockingQueue<Message> queue;
 
@@ -23,11 +29,11 @@ public class Producer implements Runnable {
                 e.printStackTrace();
             }
         }
-
         try {
             queue.put(new Message(-1));
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
+
 }

@@ -1,16 +1,29 @@
 package database.jpa;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+/**
+ * Person entity.
+ *
+ * @author Ken Kousen
+ */
 @Entity
 @Table(name = "PEOPLE")
 public class Person {
 
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
     private String name;
 
-    public Person() {}
+    public Person() {
+
+    }
 
     public Person(String name) {
         this.name = name;
@@ -44,9 +57,7 @@ public class Person {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Person person = (Person) o;
-
         if (!id.equals(person.id)) return false;
         return name.equals(person.name);
 
@@ -58,4 +69,5 @@ public class Person {
         result = 31 * result + name.hashCode();
         return result;
     }
+
 }

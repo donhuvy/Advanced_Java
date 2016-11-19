@@ -1,6 +1,10 @@
 package junit;
 
-import org.junit.*;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
@@ -10,6 +14,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 public class ListTests {
+
     private List<String> strings;
 
     @BeforeClass
@@ -42,4 +47,5 @@ public class ListTests {
     public static void finish() {
         System.out.println("Cleaning up after all tests have run");
     }
+
 }

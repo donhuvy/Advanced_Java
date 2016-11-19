@@ -1,6 +1,7 @@
 package generics;
 
 public class Pair<T> {
+
     private T first;
     private T second;
 
@@ -31,4 +32,5 @@ public class Pair<T> {
     public String toString() {
         return String.format("Pair{first=%s, second=%s}", first, second);
     }
+
 }

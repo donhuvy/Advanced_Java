@@ -1,6 +1,12 @@
 package oop;
 
+/**
+ * Hourly employee.
+ *
+ * @author Ken Kousen
+ */
 public class Hourly extends Employee {
+
     public static final double DEFAULT_RATE = 100;
     public static final int DEFAULT_HOURS = 80;
 
@@ -40,4 +46,5 @@ public class Hourly extends Employee {
     public double getPay() {
         return rate * hours;
     }
+
 }

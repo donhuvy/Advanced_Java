@@ -1,6 +1,12 @@
 package generics.wildcards;
 
+/**
+ * Salaried employee.
+ *
+ * @author Ken Kousen
+ */
 public class Salaried extends Employee {
+
     public static final double DEFAULT_SALARY = 120000;
 
     private double salary = DEFAULT_SALARY;
@@ -23,4 +29,5 @@ public class Salaried extends Employee {
         return String.format("Salaried{name=%ssalary=%s} %s",
                 getName(), salary, super.toString());
     }
+
 }

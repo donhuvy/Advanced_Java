@@ -1,12 +1,25 @@
-build
-bin
-classes
+# Java artifact
+**/*.jar
+**/*.war
+**/*.ear
+
+# Compile stuff
+**/*.class
+**/build
+**/bin
+**/classes
+
+# IntelliJ IDEA IDE
 .idea
-.gradle
+**/*.iml
+
+# Eclipse IDE
 .project
 .classpath
 .settings
+
+# Other
 out
-*.iml
 *.ipr
 *.iws
+

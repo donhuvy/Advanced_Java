@@ -1,6 +1,12 @@
 package oop;
 
+/**
+ * Store numbers.
+ *
+ * @author Ken Kousen
+ */
 public class StoreNumbers {
+
     private boolean[] numbers = new boolean[100];
 
     public void store(int num) {
@@ -17,4 +23,5 @@ public class StoreNumbers {
         sn.store(2);
         System.out.println(sn.isStored(2));
     }
+
 }

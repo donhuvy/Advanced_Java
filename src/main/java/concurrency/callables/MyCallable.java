@@ -2,7 +2,13 @@ package concurrency.callables;
 
 import java.util.concurrent.Callable;
 
+/**
+ * MyCallable class.
+ *
+ * @author Ken Kousen
+ */
 public class MyCallable implements Callable<String> {
+
     private int id;
 
     public MyCallable(int id) {
@@ -19,4 +25,5 @@ public class MyCallable implements Callable<String> {
     public String toString() {
         return String.format("MyCallable{id=%d}", id);
     }
+
 }
